@@ -1,5 +1,23 @@
+##To click() on the clickable element you need to induce WebDriverWait
+##for the element_to_be_clickable() and you can use either of the
+##following locator strategies:
 
-# Opening and Closing using selenium
+#Using CSS_SELECTOR:
+WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "element"))).click()
+
+#Using XPATH:
+WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "element"))).click()
+
+#Using XPATH and inner text:
+WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//button[normalize-space(text())='text']"))).click()
+
+#Note: You have to add the following imports:
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+
+## Opening and Closing using selenium
+
 # Import module
 from selenium import webdriver
 
