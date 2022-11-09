@@ -1,3 +1,12 @@
+##Common libraries and packages
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+# To avoid ElementClickInterceptedException: Message: element click intercepted
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 ##To click() on the clickable element you need to induce WebDriverWait
 ##for the element_to_be_clickable() and you can use either of the
 ##following locator strategies:
