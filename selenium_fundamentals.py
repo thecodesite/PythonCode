@@ -54,3 +54,7 @@ driver.close()
 
 # Switching to old tab
 driver.switch_to.window(driver.window_handles[0])
+
+##Get current url
+
+print(driver.current_url)
