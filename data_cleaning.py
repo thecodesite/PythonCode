@@ -22,3 +22,6 @@ slist = list(filter(str.strip, slist))
 #PROs:
 #fastest;
 #understandability of the code.
+
+## Remove emojis
+df = df.astype(str).apply(lambda x: x.str.encode('ascii', 'ignore').str.decode('ascii'))
