@@ -34,3 +34,22 @@ df['messages'].astype(str).apply(lambda x: x.encode('latin-1', 'ignore').decode(
 ## Export CSV including Latin characters
 # 'utf-8' is the standard
 df.to_csv('./df.csv', encoding='utf-8-sig')
+
+## Powerfull lybrari to clean text
+pip install clean-text
+
+#import clean function
+from cleantext import clean
+
+#provide string with emojis
+text = "Hello world!😀🤣"
+
+#print text after removing the emojis from it
+print(clean(text, no_emoji=True))
+
+#sckitlearn
+from cleantext.sklearn import CleanTransformer
+
+cleaner = CleanTransformer(no_punct=False, lower=False)
+
+cleaner.transform(['Happily clean your text!', 'Another Input'])
