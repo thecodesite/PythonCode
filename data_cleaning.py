@@ -25,3 +25,7 @@ slist = list(filter(str.strip, slist))
 
 ## Remove emojis
 df = df.astype(str).apply(lambda x: x.str.encode('ascii', 'ignore').str.decode('ascii'))
+
+## Export CSV including Latin characters
+# 'utf-8' is the standard
+df.to_csv('./df.csv', encoding='utf-8-sig')
