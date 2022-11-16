@@ -26,6 +26,10 @@ slist = list(filter(str.strip, slist))
 ## Remove emojis
 # Be carefull ñ and accents is removed as well
 df = df.astype(str).apply(lambda x: x.str.encode('ascii', 'ignore').str.decode('ascii'))
+# Another way
+import pandas as pd
+df = pd.DataFrame({'messages':['Hello! 👋', 'Good-Morning 😃', 'How are you ?', ' Goodé 👍', 'Ländern' ]})
+df['messages'].astype(str).apply(lambda x: x.encode('latin-1', 'ignore').decode('latin-1'))
 
 ## Export CSV including Latin characters
 # 'utf-8' is the standard
