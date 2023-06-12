@@ -53,3 +53,7 @@ from cleantext.sklearn import CleanTransformer
 cleaner = CleanTransformer(no_punct=False, lower=False)
 
 cleaner.transform(['Happily clean your text!', 'Another Input'])
+
+# filter values from a list
+my_list = [nan, 'a', 'b'}
+new_list = list(filter(lambda x: str(x) != 'nan', my_list))
